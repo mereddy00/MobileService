@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>e0cbe926-5c4a-469c-9f12-d302a09fd4a4.TABLE:main.orders_order</OriginalElement>
+  <nodes>
+    <node x="24.166666666666657" y="370.0">e0cbe926-5c4a-469c-9f12-d302a09fd4a4.TABLE:main.orders_order</node>
+    <node x="209.0" y="121.0">e0cbe926-5c4a-469c-9f12-d302a09fd4a4.TABLE:main.orders_orderstatus</node>
+    <node x="0.0" y="0.0">e0cbe926-5c4a-469c-9f12-d302a09fd4a4.TABLE:main.users_customuser</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="e0cbe926-5c4a-469c-9f12-d302a09fd4a4.TABLE:main.orders_order" target="e0cbe926-5c4a-469c-9f12-d302a09fd4a4.TABLE:main.orders_orderstatus" relationship="REFERENCES">
+      <point x="70.33333333333331" y="-127.0" />
+      <point x="199.99999999999997" y="345.0" />
+      <point x="302.0" y="345.0" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="e0cbe926-5c4a-469c-9f12-d302a09fd4a4.TABLE:main.orders_order" target="e0cbe926-5c4a-469c-9f12-d302a09fd4a4.TABLE:main.users_customuser" relationship="REFERENCES">
+      <point x="0.0" y="-127.0" />
+      <point x="129.66666666666666" y="345.0" />
+      <point x="94.5" y="345.0" />
+      <point x="0.0" y="160.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="false" x="197.5" y="312.0" />
+  <SelectedNodes>
+    <node>e0cbe926-5c4a-469c-9f12-d302a09fd4a4.TABLE:main.orders_order</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Columns</Category>
+    <Category>Key columns</Category>
+    <Category>Virtual foreign keys</Category>
+  </Categories>
+</Diagram>
+
