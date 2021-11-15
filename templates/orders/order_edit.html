@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div style="padding-top: 20px; height: 600px; margin: auto; width: 400px; opacity: .8; background-color: #f2f2f2;color: black;">
+
+     {% if user.user_type != 'Customer' %}
+                        <th scope="col">Action</th>
+{% endif %}
+    <h1>Edit</h1>
+    <form action="" method="post">{% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-info ml-2" type="submit">Update</button>
+    </form></div>
+{% endblock content %}

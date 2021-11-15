@@ -14,7 +14,6 @@ class OrderStatus(models.Model):
 
 
 class Order(models.Model):
-
     employee = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name="employee")
     customer = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name="customer")
     status = models.ForeignKey(OrderStatus, on_delete=models.CASCADE)
@@ -23,6 +22,5 @@ class Order(models.Model):
     mobile_model = models.CharField(max_length=255)
     mobile_IMEI = models.CharField(max_length=255)
     estimated_amount = models.IntegerField()
-    estimated_date = models.DateField()
-
+    estimated_date = models.DateTimeField()
 

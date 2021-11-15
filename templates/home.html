@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+<div class="jumbotron">
+  <h1 class="display-4">Mobile Service</h1>
+  <p class="lead">Mobile Repair Center</p>
+     {% if user.user_type != 'Customer' %}
+
+
+        <a class="btn btn-success btn-lg" href="{% url 'order_create' %}" role="button">Order Registration</a>
+    {% endif %}
+        <a class="btn btn-success btn-lg" href="{% url 'order_list' %}" role="button">Order List</a>
+</div>
+{% endblock content %}

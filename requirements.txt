@@ -1,2 +1,2 @@
-django-crispy-forms
+Django-crispy-forms
 Django

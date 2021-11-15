@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %}Client Registration{% endblock title %}
+    {% if user.user_type != 'Customer' %}
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                            <a class="btn btn-success btn-lg" href="{% url 'order_create' %}" role="button">Add Order</a>
+
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+{% block content %}
+            <div class="row">
+        <div class="col-12">
+            <table class="table table-bordered table-dark">
+                <thead>
+                <tr>{% if user.user_type != 'Customer' %}
+                    <th scope="col">Employee Name</th>
+                    <th scope="col">Customer Name</th>{% endif %}
+                    <th scope="col">Status</th>
+                    <th scope="col">Description</th>{% if user.user_type != 'Customer' %}
+                    <th scope="col">Mobile Brand</th>
+                    <th scope="col">Mobile Model</th>
+                    <th scope="col">Estimated IMEI</th>
+                    <th scope="col">Estimated Amount</th>
+                    <th scope="col">Estimated Date</th>{% endif %}
+                    {% if user.user_type != 'Customer' %}
+                        <th scope="col">Action</th>
+{% endif %}
+                </tr>
+                </thead>
+                <tbody>
+    {% for order in object_list %}
+
+                    <tr>{% if user.user_type != 'Customer' %}
+
+                        <th scope="row">{{ order.employee }}</th>
+                        <th scope="row">{{ order.customer }}</th>{% endif %}
+                        <td>{{ order.status.get_status_display }}</td>
+                        <td>{{ order.description }}</td>{% if user.user_type != 'Customer' %}
+                        <td>{{ order.mobile_brand }}</td>
+                        <td>{{ order.mobile_model }}</td>
+                        <td>{{ order.mobile_IMEI }}</td>
+                        <td>{{ order.estimated_amount }}</td>
+                        <td>{{ order.estimated_date }}</td>{% endif %}
+                         {% if user.user_type != 'Customer' %}
+                        <td>
+
+                            <a type="button" class="btn btn-success" href="{% url 'order_edit' order.pk %}">Edit<i
+                                    class="fas fa-pencil" aria-hidden="true"></i></a>
+                             <a type="button" class="btn btn-danger" href="{% url 'order_delete' order.pk %}">Delete<i
+                                    class="fas fa-pencil" aria-hidden="true"></i></a>
+
+                        </td>
+                    {% endif %}
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock content %}
